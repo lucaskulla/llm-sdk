@@ -1,0 +1,13 @@
+name: Run Tests on Dev Branch
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+jobs:
+  test-and-build:
+    uses: ./.github/workflows/common.yml
