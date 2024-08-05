@@ -1,7 +1,7 @@
 import unittest
 import requests
 import requests_mock
-from ollama.helpers import generate
+from ollama.generate import generate
 
 
 class TestGenerateFunction(unittest.TestCase):
