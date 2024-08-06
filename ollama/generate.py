@@ -84,7 +84,7 @@ import time
 from requests.exceptions import RequestException
 
 
-def generate_single_response(user_prompt, system_prompt, messages, model, options, context=None,
+def generate_single_response(user_prompt, system_prompt, messages, model, options=None, context=None,
                              answer_format=None, base_url="localhost", base_url_port=11434, max_retries=10):
     """
     Send a single request to the API and return the response and context.
