@@ -1,6 +1,12 @@
 name: Common Workflow
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        description: 'Python version to use'
+        required: false
+        default: '3.x'
 
 jobs:
   build-and-test:
@@ -13,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: ${{ inputs.python-version }}
 
       - name: Install dependencies
         run: |
