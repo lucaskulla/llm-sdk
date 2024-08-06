@@ -11,6 +11,8 @@ permissions:
 jobs:
   test-and-release:
     uses: ./.github/workflows/common.yml
+    with:  # Make sure this matches any inputs required by the common workflow
+      python-version: '3.10'  # Example input, adjust as needed
 
   create-release:
     needs: test-and-release
