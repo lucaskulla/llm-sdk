@@ -2,12 +2,8 @@ import json
 import time
 
 import requests
-from requests import RequestException
-
-
-import json
-import requests
 from requests.exceptions import RequestException
+
 
 def generate(base_url, model, user_prompt, stream=True, system_prompt=None, messages=None, answer_format=None,
              context=None, options=None):
@@ -47,7 +43,6 @@ def generate(base_url, model, user_prompt, stream=True, system_prompt=None, mess
     # Remove keys with None values
     payload = {k: v for k, v in payload.items() if v is not None}
 
-
     try:
         with requests.post(url, json=payload, stream=stream) as response:
             response.raise_for_status()
@@ -79,9 +74,6 @@ def generate(base_url, model, user_prompt, stream=True, system_prompt=None, mess
         return None, None
 
 
-
-import time
-from requests.exceptions import RequestException
 
 
 def generate_single_response(user_prompt, system_prompt, messages, model, options=None, context=None,
